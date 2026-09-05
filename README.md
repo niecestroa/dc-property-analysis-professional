@@ -1,17 +1,116 @@
 # **DC Property Modeling Lab**
 
-A unified analytical system for modeling Washington, D.C. real estate data using rigorous statistical methods, Bayesian inference, and modern machine‑learning engineering practices. The **DC Property Modeling Lab** provides a fully reproducible, modular workflow designed for professional‑grade modeling, diagnostics, and reporting.
+A unified analytical system for modeling Washington, D.C. real estate data using rigorous statistical methods, Bayesian inference, classical GLMs, and modern machine‑learning engineering practices. The **DC Property Modeling Lab** provides a fully reproducible, modular workflow designed for professional‑grade modeling, diagnostics, and reporting.
 
-This repository serves as a comprehensive modeling environment that integrates:
+The repository now includes **both regression and classification pipelines**, enabling continuous price prediction and price‑tier segmentation within the same end‑to‑end workflow.
 
-- Classical statistical modeling (GLM, inference, diagnostics)  
+The system integrates:
+
+- Classical statistical modeling (GLM, inference, diagnostics, logistic regression)  
 - Bayesian hierarchical modeling (Stan, JAGS)  
 - Machine‑learning regression pipelines (trees, ensembles, regularization)  
+- Machine‑learning classification pipelines (binary, 3‑class, 4‑class)  
 - Modular R workflows with optional Python equivalents  
 - Automated evaluation, visualization, and reporting  
 - A structured ML manual documenting pipeline architecture and modeling methodology  
 
 The goal is to demonstrate **end‑to‑end analytical engineering**, **transparent modeling**, and **reproducible computation** in a single cohesive system.
+
+---
+
+## **Repository Structure**
+
+The project is organized into four major modeling modules:
+
+```
+bayesian/
+glm/
+machine_learning_regression/
+pipeline/
+```
+
+### **bayesian/**
+Bayesian hierarchical modeling using Stan and JAGS, including:
+
+- Hierarchical model specification  
+- MCMC sampling  
+- Posterior inference  
+- Convergence diagnostics  
+- Posterior predictive checks  
+
+### **glm/**
+Classical statistical modeling:
+
+- **Linear regression**  
+- **Logistic regression** (binary classification)  
+- Regularized regression (ridge, lasso, elastic net)  
+- Likelihood‑based inference  
+- Diagnostics and interpretability workflows  
+
+GLM models serve as interpretable baselines for both regression and classification tasks.
+
+### **machine_learning_regression/**
+Modern ML regression pipelines:
+
+- Decision trees  
+- Random forest  
+- Bagging  
+- PCR / PLS  
+- Unified evaluation (MSE, RMSE, MAE, R²)  
+- Residual diagnostics and predicted‑vs‑actual plots  
+
+### **pipeline/**
+The **end‑to‑end modeling pipeline**, integrating:
+
+- Data loading and preprocessing  
+- Feature engineering  
+- Train/test splitting  
+- Regression models  
+- **Classification models** (binary, 3‑class, 4‑class)  
+- Unified evaluation framework  
+- Automated visualization  
+- Saved comparison tables  
+- Confusion matrices  
+- Final reporting (RMarkdown / Quarto)
+
+This is the operational workflow that runs the entire modeling system via:
+
+```
+Rscript run_all.R
+```
+
+---
+
+## **Classification Pipeline (New)**
+
+The modeling lab now includes full support for **price‑tier classification**, enabling segmentation tasks such as affordability analysis, market tiering, and risk scoring.
+
+### **Supported Classification Tasks**
+- **Binary classification**  
+  Expensive vs Non‑Expensive (mean/median split)
+
+- **3‑class classification**  
+  Low / Medium / High tiers
+
+- **4‑class classification**  
+  Quartiles of the price distribution
+
+### **Implemented Algorithms**
+- Logistic regression (GLM module)  
+- KNN  
+- LDA  
+- QDA  
+- SVM (multiple kernels)
+
+### **Evaluation & Visualization**
+- Accuracy  
+- Macro‑F1  
+- Weighted‑F1  
+- Confusion matrices  
+- Multi‑class bar charts  
+- Unified comparison tables  
+
+Classification is fully integrated into the main pipeline and final report.
 
 ---
 
@@ -23,12 +122,12 @@ A complete, configurable workflow for DC property modeling:
 - Data cleaning and preprocessing  
 - Feature engineering  
 - Train/test splitting  
-- Regression models (linear, regularized, tree‑based, ensembles)  
-- Unified evaluation metrics (MSE, RMSE, MAE, R²)  
+- Regression and classification models  
+- Unified evaluation metrics  
 - Automated plots, diagnostics, and comparison tables  
 - Caching for fast reproducible runs  
 
-All components are controlled through a central `config.yaml`, enabling consistent and repeatable analyses.
+All components are controlled through a central `config.yaml`.
 
 ---
 
@@ -37,11 +136,10 @@ Bayesian workflows implemented in **Stan** and **JAGS**, including:
 
 - Hierarchical model specification  
 - Posterior inference and uncertainty quantification  
-- MCMC diagnostics and convergence checks  
+- MCMC diagnostics  
 - Posterior predictive validation  
-- Model comparison and interpretation  
 
-These models provide probabilistic insight complementary to classical and ML regression approaches.
+These models provide probabilistic insight complementary to classical and ML approaches.
 
 ---
 
@@ -49,24 +147,26 @@ These models provide probabilistic insight complementary to classical and ML reg
 Classical statistical modeling using:
 
 - Linear regression  
+- **Logistic regression** (binary classification)  
 - Regularization (ridge, lasso, elastic net)  
 - Cross‑validation  
-- Residual diagnostics and interpretability workflows  
+- Residual diagnostics  
 
-GLMs serve as interpretable baselines and anchor the modeling lab’s statistical foundation.
+GLMs serve as interpretable baselines for both regression and classification tasks.
 
 ---
 
-### **4. Machine‑Learning Regression**
-Modern ML regression pipelines including:
+### **4. Machine‑Learning Regression & Classification**
+Modern ML pipelines including:
 
 - Decision trees  
 - Random forest  
-- Gradient boosting (if enabled)  
-- Regularized regression variants  
+- Bagging  
+- Regularized regression  
+- KNN, LDA, QDA, SVM classification  
 - Unified evaluation and visualization  
 
-Classification has been removed from the current version of the lab to maintain methodological coherence with the dataset and modeling objectives.
+Regression and classification now coexist within the same pipeline.
 
 ---
 
@@ -80,19 +180,17 @@ A structured reference documenting:
 - Pipeline architecture  
 - Best practices for reproducible ML  
 
-This manual supports transparency, communication, and professional documentation of the modeling system.
-
 ---
 
 ## **Technical Capabilities Demonstrated**
 
 | Area | Capabilities | Tools |
 |------|--------------|-------|
-| **Statistical Modeling** | GLMs, inference, diagnostics | R, Python |
+| **Statistical Modeling** | GLMs, logistic regression, inference, diagnostics | R, Python |
 | **Bayesian Analysis** | Hierarchical models, MCMC | Stan, JAGS |
-| **Machine Learning (Regression)** | Trees, ensembles, regularization | R, Python |
+| **Machine Learning (Regression & Classification)** | Trees, ensembles, regularization, KNN, LDA/QDA, SVM | R, Python |
 | **Pipeline Engineering** | Modular design, caching, reproducibility | R Projects, Git |
-| **Visualization** | Exploratory and model‑based graphics | ggplot2, Python |
+| **Visualization** | EDA, diagnostics, comparison charts | ggplot2, Python |
 | **Documentation** | ML manual, structured reporting | Quarto, R Markdown |
 
 ---
@@ -112,7 +210,7 @@ The **DC Property Modeling Lab** is designed as a professional modeling environm
 
 - Reproducible analytical engineering  
 - Transparent statistical and Bayesian modeling  
-- Modern ML regression workflows  
+- Modern ML regression and classification workflows  
 - Clean documentation and communication of modeling decisions  
 
 It serves as a showcase of rigorous modeling practice suitable for data science, biostatistics, and applied analytics roles.
