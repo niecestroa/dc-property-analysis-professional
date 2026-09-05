@@ -119,9 +119,18 @@ models:
   bagging:
     ntree: 200
   svm:
+    # Default kernel used for single-kernel SVM and tuning
+    kernel_default: "radial"
+    # Kernels used in multi-kernel comparison
     kernels: ["linear", "radial", "polynomial", "sigmoid"]
+    # Default hyperparameters (used for untuned baseline model)
     cost_default: 1
-    gamma_default: 0.1
+    gamma_default: 0.01
+    # Hyperparameter tuning grid (cost × gamma)
+    cost_grid: [0.1, 1, 10, 100]
+    gamma_grid: [0.001, 0.01, 0.1, 1]
+    # Optional: polynomial kernel degree (if you want tuning later)
+    degree_default: 3
 
 # -----------------------------------------------------------------------------
 # Pipeline Caching & Fast Mode
