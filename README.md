@@ -1,41 +1,39 @@
 # **DC Property Modeling Lab**
 
-## **Overview**
-The **DC Property Modeling Lab** is a unified analytical framework integrating statistical modeling, Bayesian inference, generalized linear models, and modern machine‑learning workflows. The project provides a complete, reproducible system for modeling Washington, D.C. real estate data using professional‑grade analytical engineering practices.
+A unified analytical system for modeling Washington, D.C. real estate data using rigorous statistical methods, Bayesian inference, and modern machine‑learning engineering practices. The **DC Property Modeling Lab** provides a fully reproducible, modular workflow designed for professional‑grade modeling, diagnostics, and reporting.
 
-This lab combines:
+This repository serves as a comprehensive modeling environment that integrates:
 
 - Classical statistical modeling (GLM, inference, diagnostics)  
 - Bayesian hierarchical modeling (Stan, JAGS)  
-- Machine learning pipelines (trees, ensembles, SVM, regularization)  
+- Machine‑learning regression pipelines (trees, ensembles, regularization)  
 - Modular R workflows with optional Python equivalents  
 - Automated evaluation, visualization, and reporting  
-- A structured ML manual documenting methods and pipeline design  
+- A structured ML manual documenting pipeline architecture and modeling methodology  
 
-The goal is to demonstrate rigorous modeling, reproducible computation, and clear analytical communication in a single cohesive system.
+The goal is to demonstrate **end‑to‑end analytical engineering**, **transparent modeling**, and **reproducible computation** in a single cohesive system.
 
 ---
 
 ## **Key Features**
 
-### **1. End‑to‑End ML Pipeline**
-A complete workflow for DC property modeling:
+### **1. End‑to‑End Modeling Pipeline**
+A complete, configurable workflow for DC property modeling:
 
 - Data cleaning and preprocessing  
 - Feature engineering  
 - Train/test splitting  
-- Regression and classification models  
-- Ensemble methods (bagging, random forest)  
-- Unified evaluation (MSE, RMSE, MAE, R², accuracy)  
-- Automated plots and comparison tables  
+- Regression models (linear, regularized, tree‑based, ensembles)  
+- Unified evaluation metrics (MSE, RMSE, MAE, R²)  
+- Automated plots, diagnostics, and comparison tables  
 - Caching for fast reproducible runs  
 
-All pipeline components are controlled through a central `config.yaml`.
+All components are controlled through a central `config.yaml`, enabling consistent and repeatable analyses.
 
 ---
 
 ### **2. Bayesian Modeling**
-Bayesian workflows using **Stan** and **JAGS**, including:
+Bayesian workflows implemented in **Stan** and **JAGS**, including:
 
 - Hierarchical model specification  
 - Posterior inference and uncertainty quantification  
@@ -43,7 +41,7 @@ Bayesian workflows using **Stan** and **JAGS**, including:
 - Posterior predictive validation  
 - Model comparison and interpretation  
 
-These models provide probabilistic insight complementary to ML predictions.
+These models provide probabilistic insight complementary to classical and ML regression approaches.
 
 ---
 
@@ -51,16 +49,28 @@ These models provide probabilistic insight complementary to ML predictions.
 Classical statistical modeling using:
 
 - Linear regression  
-- Logistic regression  
-- Poisson and negative binomial models  
 - Regularization (ridge, lasso, elastic net)  
-- Cross‑validation and diagnostics  
+- Cross‑validation  
+- Residual diagnostics and interpretability workflows  
 
-GLMs serve as interpretable baselines within the modeling lab.
+GLMs serve as interpretable baselines and anchor the modeling lab’s statistical foundation.
 
 ---
 
-### **4. Machine Learning Manual**
+### **4. Machine‑Learning Regression**
+Modern ML regression pipelines including:
+
+- Decision trees  
+- Random forest  
+- Gradient boosting (if enabled)  
+- Regularized regression variants  
+- Unified evaluation and visualization  
+
+Classification has been removed from the current version of the lab to maintain methodological coherence with the dataset and modeling objectives.
+
+---
+
+### **5. Machine Learning Manual**
 A structured reference documenting:
 
 - Modeling assumptions  
@@ -70,7 +80,7 @@ A structured reference documenting:
 - Pipeline architecture  
 - Best practices for reproducible ML  
 
-This manual supports transparency and professional communication.
+This manual supports transparency, communication, and professional documentation of the modeling system.
 
 ---
 
@@ -81,9 +91,9 @@ dc-property-modeling-lab/
 │
 ├── data/                 # Raw and processed datasets
 ├── r_code/               # Pipeline modules and model implementations
-├── bayesian/             # Stan/JAGS models
-├── glm/                  # GLM workflows
-├── ml_manual/            # Modeling documentation
+├── bayesian/             # Stan/JAGS model files
+├── glm/                  # GLM workflows and diagnostics
+├── ml_manual/            # Modeling documentation and pipeline reference
 ├── models/               # Saved model artifacts (cached)
 ├── outputs/              # Plots, tables, reports
 └── config.yaml           # Central configuration file
@@ -97,7 +107,7 @@ dc-property-modeling-lab/
 |------|--------------|-------|
 | **Statistical Modeling** | GLMs, inference, diagnostics | R, Python |
 | **Bayesian Analysis** | Hierarchical models, MCMC | Stan, JAGS |
-| **Machine Learning** | Trees, ensembles, SVM, regularization | R, Python |
+| **Machine Learning (Regression)** | Trees, ensembles, regularization | R, Python |
 | **Pipeline Engineering** | Modular design, caching, reproducibility | R Projects, Git |
 | **Visualization** | Exploratory and model‑based graphics | ggplot2, Python |
 | **Documentation** | ML manual, structured reporting | Quarto, R Markdown |
@@ -105,9 +115,21 @@ dc-property-modeling-lab/
 ---
 
 ## **Companion Repository**
+
 For earlier academic case studies and foundational modeling work, see:
 
 **DC Property Academic Statistical Analysis Portfolio**  
 [https://github.com/niecestroa/dc-property-analysis-academic/tree/main](https://github.com/niecestroa/dc-property-analysis-academic/tree/main)
 
 ---
+
+## **Purpose and Vision**
+
+The **DC Property Modeling Lab** is designed as a professional modeling environment that demonstrates:
+
+- Reproducible analytical engineering  
+- Transparent statistical and Bayesian modeling  
+- Modern ML regression workflows  
+- Clean documentation and communication of modeling decisions  
+
+It serves as a showcase of rigorous modeling practice suitable for data science, biostatistics, and applied analytics roles.
