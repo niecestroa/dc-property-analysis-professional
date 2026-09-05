@@ -95,11 +95,11 @@ dc-property-modeling-lab/
 
 | Area | Capabilities | Tools |
 |------|--------------|-------|
-| **Statistical Modeling** | GLMs, inference, diagnostics | R, SAS |
+| **Statistical Modeling** | GLMs, inference, diagnostics | R, Python |
 | **Bayesian Analysis** | Hierarchical models, MCMC | Stan, JAGS |
 | **Machine Learning** | Trees, ensembles, SVM, regularization | R, Python |
 | **Pipeline Engineering** | Modular design, caching, reproducibility | R Projects, Git |
-| **Visualization** | Exploratory and model‑based graphics | ggplot2, Shiny |
+| **Visualization** | Exploratory and model‑based graphics | ggplot2, Python |
 | **Documentation** | ML manual, structured reporting | Quarto, R Markdown |
 
 ---
