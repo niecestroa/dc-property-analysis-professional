@@ -7,6 +7,7 @@
 
 suppressPackageStartupMessages({
   library(randomForest)
+  library(ranger)
   library(dplyr)
   library(ggplot2)
 })
@@ -33,39 +34,35 @@ suppressPackageStartupMessages({
 #' @return randomForest object.
 fit_random_forest <- function(train, cfg, ntree = NULL) {
   
-  library(randomForest)
+  library(ranger)
   
-  # Use config value or fall back to a faster default
   if (is.null(ntree)) {
-    ntree <- max(cfg$models$random_forest$ntree_values)  # originally 500
+    ntree <- max(cfg$models$random_forest$ntree_values)
   }
   
-  # SAFER + FASTER: cap ntree at 200 for development
   if (ntree > 200) ntree <- 200
   
-  # Remove classification columns
   exclude <- c("class_mean", "class_median")
   train_rf <- train %>% dplyr::select(-dplyr::any_of(exclude))
   
-  # Compute a stable mtry
   p <- ncol(train_rf) - 1
   mtry_val <- floor(sqrt(p))
   
-  message(sprintf("[fit_random_forest] Fitting RF (ntree=%d, mtry=%d) ...",
+  message(sprintf("[fit_random_forest] Fitting RANGER RF (ntree=%d, mtry=%d) ...",
                   ntree, mtry_val))
   
   set.seed(cfg$project$seed)
   
-  model <- randomForest::randomForest(
-    Price_10K ~ .,
+  model <- ranger(
+    formula    = Price_10K ~ .,
     data       = train_rf,
-    ntree      = ntree,
+    num.trees  = ntree,
     mtry       = mtry_val,
-    importance = TRUE,
-    do.trace   = TRUE   # <‑‑ prints progress every tree
+    importance = "impurity",
+    oob.error  = TRUE
   )
   
-  pct_var <- round(100 * mean(model$rsq), 2)
+  pct_var <- round(100 * (1 - model$prediction.error), 2)
   message(sprintf("[fit_random_forest] %% Var explained (OOB) = %.2f%%", pct_var))
   
   model

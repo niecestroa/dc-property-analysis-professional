@@ -26,6 +26,7 @@ required_packages <- c(
   "rpart.plot", # Tree visualisation
   "randomForest",
   "e1071",      # SVM
+  "ranger",     # FAST random forest replacement
 
   # Diagnostics & variable selection
   "car",        # vif, outlierTest
