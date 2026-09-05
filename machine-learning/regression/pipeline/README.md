@@ -72,6 +72,3 @@ This folder highlights the regression modeling techniques used in the DC Propert
 - **easy to compare across models**  
 
 It serves as the foundation for the project’s continuous‑outcome prediction tasks.
-parison** section  
-
-Just tell me which one you want next.
