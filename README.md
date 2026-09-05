@@ -1,92 +1,113 @@
-# **Applied Statistical & Bayesian Modeling Portfolio**
+# **DC Property Modeling Lab**
 
 ## **Overview**
-This repository highlights a selection of **professional‑caliber statistical, Bayesian, and machine learning workflows** developed to demonstrate technical depth, modeling rigor, and reproducible analytical design. These projects reflect standards used in clinical research, regulatory submissions, and advanced data science environments.
+The **DC Property Modeling Lab** is a unified analytical framework integrating statistical modeling, Bayesian inference, generalized linear models, and modern machine‑learning workflows. The project provides a complete, reproducible system for modeling Washington, D.C. real estate data using professional‑grade analytical engineering practices.
 
-This portfolio showcases:
-- End‑to‑end analytical workflow development  
-- Statistical modeling and inference  
+This lab combines:
+
+- Classical statistical modeling (GLM, inference, diagnostics)  
 - Bayesian hierarchical modeling (Stan, JAGS)  
-- Predictive modeling and model evaluation  
-- Reproducible R and Python practices  
-- Clear communication of analytical results  
+- Machine learning pipelines (trees, ensembles, SVM, regularization)  
+- Modular R workflows with optional Python equivalents  
+- Automated evaluation, visualization, and reporting  
+- A structured ML manual documenting methods and pipeline design  
+
+The goal is to demonstrate rigorous modeling, reproducible computation, and clear analytical communication in a single cohesive system.
 
 ---
 
-## **Abstract**
-This repository presents a curated collection of **professional‑grade statistical, Bayesian, and machine learning workflows** designed to demonstrate advanced analytical capability, reproducible modeling practices, and clear scientific communication. The projects highlight practical applications of hierarchical modeling, predictive analytics, and modern computational methods using R, Python, Stan, and JAGS.
+## **Key Features**
 
-For earlier academic case studies and foundational modeling work, please see the companion repository: [**DC Property Academic Statistical Analysis Portfolio**](https://github.com/niecestroa/dc-property-analysis-academic/tree/main)
+### **1. End‑to‑End ML Pipeline**
+A complete workflow for DC property modeling:
+
+- Data cleaning and preprocessing  
+- Feature engineering  
+- Train/test splitting  
+- Regression and classification models  
+- Ensemble methods (bagging, random forest)  
+- Unified evaluation (MSE, RMSE, MAE, R², accuracy)  
+- Automated plots and comparison tables  
+- Caching for fast reproducible runs  
+
+All pipeline components are controlled through a central `config.yaml`.
 
 ---
 
-## **Featured Projects**
+### **2. Bayesian Modeling**
+Bayesian workflows using **Stan** and **JAGS**, including:
 
-### **1. Bayesian Modeling & Hierarchical Inference**
-Advanced Bayesian workflows using **Stan** and **JAGS**, including:
 - Hierarchical model specification  
 - Posterior inference and uncertainty quantification  
-- MCMC diagnostics and convergence assessment  
-- Posterior predictive checks and model comparison  
+- MCMC diagnostics and convergence checks  
+- Posterior predictive validation  
+- Model comparison and interpretation  
+
+These models provide probabilistic insight complementary to ML predictions.
 
 ---
 
-### **2. Statistical Modeling & Predictive Analytics**
-Applied regression and classification workflows using:
-- Generalized linear models  
-- Regularization methods  
-- Ensemble learning  
-- Cross‑validation and performance benchmarking  
+### **3. Generalized Linear Models (GLM)**
+Classical statistical modeling using:
+
+- Linear regression  
+- Logistic regression  
+- Poisson and negative binomial models  
+- Regularization (ridge, lasso, elastic net)  
+- Cross‑validation and diagnostics  
+
+GLMs serve as interpretable baselines within the modeling lab.
 
 ---
 
-### **3. Interactive Analytical Tools**
-Development of interactive applications and dashboards for communicating model results, including:
-- R Shiny interfaces  
-- Dynamic visualizations  
-- User‑driven model exploration  
+### **4. Machine Learning Manual**
+A structured reference documenting:
+
+- Modeling assumptions  
+- Feature engineering strategies  
+- Hyperparameter selection  
+- Evaluation metrics  
+- Pipeline architecture  
+- Best practices for reproducible ML  
+
+This manual supports transparency and professional communication.
 
 ---
 
-# **Project Summary Table**
-A consolidated view of the analytical approaches, tools, and outcomes demonstrated across the portfolio.
+## **Repository Structure**
 
-| **Project** | **Primary Methods** | **Tools / Technologies** | **Key Outcomes** |
-|-------------|---------------------|---------------------------|------------------|
-| **Bayesian Modeling & Hierarchical Inference** | Hierarchical Bayesian models, MCMC, posterior inference, predictive checks | Stan, JAGS, R, tidyverse | Robust hierarchical modeling, uncertainty quantification, convergence diagnostics, reproducible Bayesian workflows |
-| **Statistical Modeling & Predictive Analytics** | GLMs, regularization, ensemble learning, cross‑validation | R, Python (scikit‑learn), SAS | Predictive model development, performance benchmarking, interpretable statistical modeling |
-| **Interactive Analytical Tools** | Reactive programming, UI/UX for analytics, dynamic visualization | R Shiny, ggplot2, HTML/CSS | Interactive dashboards enabling exploration of model outputs and data‑driven decision support |
-| **Reproducible Workflow Design** | Modular pipeline design, documentation, version control | R Projects, Python scripts, Git/GitHub | Clean, maintainable, end‑to‑end analytical workflows aligned with professional standards |
-
----
-
-# **Skills Matrix**
-A structured overview of technical strengths aligned with industry expectations.
-
-| **Skill Area** | **Capabilities Demonstrated** | **Tools / Languages** |
-|----------------|------------------------------|------------------------|
-| **Statistical Modeling** | GLMs, mixed models, inference, diagnostics, model selection | R, SAS, Python (statsmodels) |
-| **Bayesian Analysis** | Hierarchical models, MCMC, posterior inference, convergence assessment | Stan, JAGS, R, Python (PyMC) |
-| **Machine Learning** | Classification, regression, ensembles, cross‑validation, performance metrics | scikit‑learn, R caret, Python |
-| **Data Engineering & Wrangling** | Cleaning, transformation, feature engineering, reproducible pipelines | tidyverse, dplyr, pandas, SQL |
-| **Visualization & Communication** | Exploratory plots, dashboards, interactive tools, scientific reporting | ggplot2, Shiny, matplotlib, Quarto/R Markdown |
-| **Programming & Workflow Design** | Modular code, version control, documentation, reproducibility | R, Python, Git/GitHub |
-| **Clinical & Regulatory Alignment** | Analysis workflows consistent with clinical research and submission standards | R, SAS, reproducible pipelines |
+```
+dc-property-modeling-lab/
+│
+├── data/                 # Raw and processed datasets
+├── r_code/               # Pipeline modules and model implementations
+├── bayesian/             # Stan/JAGS models
+├── glm/                  # GLM workflows
+├── ml_manual/            # Modeling documentation
+├── models/               # Saved model artifacts (cached)
+├── outputs/              # Plots, tables, reports
+└── config.yaml           # Central configuration file
+```
 
 ---
 
-## **Technical Competencies Demonstrated**
-- **Statistical Programming:** R, Python, SAS  
-- **Bayesian Modeling:** Stan, JAGS, MCMC, hierarchical models  
-- **Machine Learning:** Classification, regression, ensemble methods  
-- **Data Engineering:** Cleaning, wrangling, reproducible pipelines  
-- **Visualization:** ggplot2, Shiny, tidyverse, Python visualization libraries  
-- **Documentation:** Clear, structured, and professional reporting  
+## **Technical Capabilities Demonstrated**
+
+| Area | Capabilities | Tools |
+|------|--------------|-------|
+| **Statistical Modeling** | GLMs, inference, diagnostics | R, SAS |
+| **Bayesian Analysis** | Hierarchical models, MCMC | Stan, JAGS |
+| **Machine Learning** | Trees, ensembles, SVM, regularization | R, Python |
+| **Pipeline Engineering** | Modular design, caching, reproducibility | R Projects, Git |
+| **Visualization** | Exploratory and model‑based graphics | ggplot2, Shiny |
+| **Documentation** | ML manual, structured reporting | Quarto, R Markdown |
 
 ---
 
-## **Professional Disclaimer**
-This repository is intended to demonstrate **professional analytical capabilities**, modeling practices, and reproducible workflow design.  
-For academic examples and earlier methodological work, please refer to the companion repository:  
-[**DC Property Academic Statistical Analysis Portfolio**](https://github.com/niecestroa/dc-property-analysis-academic/tree/main)
+## **Companion Repository**
+For earlier academic case studies and foundational modeling work, see:
 
+**DC Property Academic Statistical Analysis Portfolio**  
+[https://github.com/niecestroa/dc-property-analysis-academic/tree/main](https://github.com/niecestroa/dc-property-analysis-academic/tree/main)
+
+---
