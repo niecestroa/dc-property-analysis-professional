@@ -10,7 +10,8 @@ Modular machine learning library with parallel R and Python implementations for 
 machine-learning/
     classification/
     regression/
-    unsupervised/
+        pipelines/
+        manual
 ```
 
 Each folder contains model‑specific subdirectories. Every model includes:
