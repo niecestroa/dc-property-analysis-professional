@@ -1,4 +1,4 @@
-# **README.md — DC Housing Qualification Analysis (R + Python Comparison)**
+# DC Housing Qualification Generalized Linear Model Analysis (R + Python Comparison)**
 
 ## **Overview**
 This repository contains a complete statistical analysis of residential property data from Washington, D.C., with the goal of modeling the probability that a property is *qualified* to be sold on the market.
