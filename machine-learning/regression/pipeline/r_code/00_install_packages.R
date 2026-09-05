@@ -54,4 +54,7 @@ if (length(new_packages) > 0) {
   message("All required packages are already installed.")
 }
 
+source("R/regression_metrics.R")
+
+
 message("Package check complete.")
