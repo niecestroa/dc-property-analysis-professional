@@ -60,7 +60,7 @@ A consolidated view of the analytical approaches, tools, and outcomes demonstrat
 
 ---
 
-# **Skills Matrix (Recruiter‑Ready)**
+# **Skills Matrix**
 A structured overview of technical strengths aligned with industry expectations.
 
 | **Skill Area** | **Capabilities Demonstrated** | **Tools / Languages** |
