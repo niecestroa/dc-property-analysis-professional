@@ -84,23 +84,6 @@ This manual supports transparency, communication, and professional documentation
 
 ---
 
-## **Repository Structure**
-
-```
-dc-property-modeling-lab/
-│
-├── data/                 # Raw and processed datasets
-├── r_code/               # Pipeline modules and model implementations
-├── bayesian/             # Stan/JAGS model files
-├── glm/                  # GLM workflows and diagnostics
-├── ml_manual/            # Modeling documentation and pipeline reference
-├── models/               # Saved model artifacts (cached)
-├── outputs/              # Plots, tables, reports
-└── config.yaml           # Central configuration file
-```
-
----
-
 ## **Technical Capabilities Demonstrated**
 
 | Area | Capabilities | Tools |
