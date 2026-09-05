@@ -1,14 +1,17 @@
-# **DC Property ML — Regression Models**
+# **DC Property ML — Regression & Classification Models**
 
-This folder contains the regression components of the **DC Property ML** project, a full machine‑learning pipeline for modeling Washington, D.C. real estate prices. The codebase includes reproducible R workflows (and optional Python equivalents) for predicting continuous outcomes such as `Price_10K`.
+This folder contains the supervised learning components of the **DC Property ML** project — a full end‑to‑end machine‑learning pipeline for modeling Washington, D.C. residential property values. The system supports both **continuous price prediction** and **price‑tier classification**, enabling flexible analytics for valuation, segmentation, and risk assessment.
 
-The regression module is part of a larger system that includes preprocessing, feature engineering, model training, evaluation, caching, and visualization.
+The module integrates seamlessly with the project’s preprocessing, feature engineering, evaluation, caching, and reporting framework.
 
-## **Included Regression Methods**
+---
 
-The following supervised learning models are implemented:
+## **Included Regression Models**
+
+The following continuous‑outcome models are implemented:
 
 - **Linear Regression**
+- **Polynomial Regression**
 - **Ridge Regression**
 - **Lasso Regression**
 - **PCR** — Principal Components Regression  
@@ -17,58 +20,69 @@ The following supervised learning models are implemented:
 - **Bagging**
 - **Random Forest Regression**
 
-Each model follows a consistent interface and integrates with the project’s unified evaluation and caching system.
+Each model follows a unified interface and plugs directly into the project’s evaluation pipeline (MSE, RMSE, MAE, R², residual diagnostics, predicted‑vs‑actual plots).
 
-## **Folder Structure**
+---
 
-Each regression model is organized into its own subfolder:
+## **Included Classification Models**
 
-```
-regression/
-│
-├── linear/
-├── ridge/
-├── lasso/
-├── pcr/
-├── pls/
-├── tree/
-├── bagging/
-└── random_forest/
-```
+The project now includes full support for **price‑tier classification**, enabling segmentation tasks such as affordability analysis, market tiering, and risk scoring.
 
-Every subfolder contains:
+### **Binary Classification**
+- Expensive vs Non‑Expensive (mean/median split)
 
-- **R implementation** (`.R`)
-- **Optional Python implementation** (`.py`)
-- Supporting utilities (plots, metrics, cached artifacts)
+### **3‑Class Classification**
+- Low / Medium / High price tiers
 
-This modular layout keeps the codebase clean, navigable, and aligned with the project’s end‑to‑end pipeline.
+### **4‑Class Classification**
+- Quartiles of the price distribution
+
+### **Implemented Algorithms**
+- **KNN**
+- **LDA**
+- **QDA**
+- **SVM (multiple kernels)**
+
+All classification models integrate with:
+
+- Accuracy, Macro‑F1, Weighted‑F1  
+- Confusion matrices  
+- Multi‑class bar charts  
+- Unified comparison tables  
+- Saved artifacts for reporting  
+
+---
 
 ## **Pipeline Integration**
 
-All regression models plug into the main workflow:
+All models — regression and classification — plug into the main workflow:
 
-- Preprocessing and feature engineering  
+- Data loading and preprocessing  
+- Feature engineering (polynomial features, glmnet matrices)  
 - Train/test split  
-- Model training (with caching)  
-- Unified evaluation (MSE, RMSE, MAE, R²)  
-- Visualization (predicted vs actual, MSE comparison charts)  
+- Model training with caching  
+- Unified evaluation framework  
+- Automated visualization  
 - Exported comparison tables  
+- Saved artifacts for downstream reporting  
 
-The regression module is fully compatible with:
+The module is fully compatible with:
 
 - `run_all.R`  
 - `config.yaml`  
-- The caching system (`cache/`)  
-- The evaluation framework (`14_evaluate.R`)  
+- `utils/` (plots, IO, preprocessing)  
+- The unified report generator (`14_evaluate_report.R`)  
+- The RMarkdown report (`report.Rmd`)  
+
+---
 
 ## **Purpose**
 
-This folder highlights the regression modeling techniques used in the DC Property ML project while keeping the codebase:
+This folder documents the supervised learning components of the DC Property ML project. It ensures the codebase remains:
 
-- **modular**  
-- **reproducible**  
-- **easy to extend**  
-- **easy to compare across models**  
+- **modular** — each model isolated and easy to maintain  
+- **reproducible** — deterministic training and saved artifacts  
+- **extensible** — new models can be added without breaking the pipeline  
+- **comparable** — unified metrics and visualizations across all models  
 
-It serves as the foundation for the project’s continuous‑outcome prediction tasks.
+The regression and classification modules together form the analytical backbone of the project’s valuation and segmentation capabilities.
