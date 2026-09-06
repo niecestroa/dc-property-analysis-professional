@@ -1,5 +1,9 @@
 # Regression Models
 
+Created on: February 20, 2026
+Last Updated: September 5, 2026
+Status; Completed
+
 This folder contains R and Python implementations of supervised learning methods for predicting continuous outcomes. Models are organized into subfolders, each containing a clean, reproducible workflow.
 
 ## Included Methods
