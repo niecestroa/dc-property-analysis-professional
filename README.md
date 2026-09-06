@@ -66,30 +66,24 @@ The **end‑to‑end modeling pipeline**, integrating:
 - Feature engineering  
 - Train/test splitting  
 - Regression models  
-- **Classification models** (binary, 3‑class, 4‑class)  
+- Classification models (binary mean/median)  
 - Unified evaluation framework  
 - Automated visualization  
 - Saved comparison tables  
 - Confusion matrices  
-- Final reporting (RMarkdown / Quarto)
+- Final reporting (RMarkdown)
 
 This is the operational workflow that runs the entire modeling system via:
 
 ---
 
-## **Classification Pipeline (New)**
+## **Classification Pipeline**
 
 The modeling lab now includes full support for **price‑tier classification**, enabling segmentation tasks such as affordability analysis, market tiering, and risk scoring.
 
 ### **Supported Classification Tasks**
 - **Binary classification**  
   Expensive vs Non‑Expensive (mean/median split)
-
-- **3‑class classification**  
-  Low / Medium / High tiers
-
-- **4‑class classification**  
-  Quartiles of the price distribution
 
 ### **Implemented Algorithms**
 - Logistic regression (GLM module)  
