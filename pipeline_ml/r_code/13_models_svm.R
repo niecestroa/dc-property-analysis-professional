@@ -169,6 +169,10 @@ compare_svm_tuned_vs_default <- function(train, test, class_col = "class_median"
 # ---------------------------------------------------------------------------
 
 save_svm_scatter <- function(df, class_col = "class_median", cfg, tag = "svm_scatter") {
+  
+  # FIX: convert numeric class labels (0/1) to factor BEFORE plotting
+  df[[class_col]] <- factor(df[[class_col]])
+  
   out <- file.path(here::here(cfg$paths$plot_dir), paste0(tag, ".png"))
   dir.create(dirname(out), showWarnings = FALSE, recursive = TRUE)
   
@@ -187,3 +191,4 @@ save_svm_scatter <- function(df, class_col = "class_median", cfg, tag = "svm_sca
   ggplot2::ggsave(out, p, width = 8, height = 6, dpi = 150)
   message(sprintf("[save_svm_scatter] Saved → %s", out))
 }
+
