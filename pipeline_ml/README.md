@@ -1,5 +1,10 @@
 # **DC Property ML — Regression & Classification Models**
 
+
+- Created on: September 2, 2026
+- Last Updated: September 7, 2026
+- Status: Completed
+
 This folder contains the supervised learning components of the **DC Property ML** project — a full end‑to‑end machine‑learning pipeline for modeling Washington, D.C. residential property values. The system supports both **continuous price prediction** and **price‑tier classification**, enabling flexible analytics for valuation, segmentation, and risk assessment.
 
 The module integrates seamlessly with the project’s preprocessing, feature engineering, evaluation, caching, and reporting framework.
