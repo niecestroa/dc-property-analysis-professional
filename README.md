@@ -9,7 +9,7 @@ The system integrates:
 - Classical statistical modeling (GLM, inference, diagnostics, logistic regression)  
 - Bayesian hierarchical modeling (Stan, JAGS)  
 - Machine‑learning regression pipelines (trees, ensembles, regularization)  
-- Machine‑learning classification pipelines (binary, 3‑class, 4‑class)  
+- Machine‑learning classification pipelines (binary: mean/median split)  
 - Modular R workflows with optional Python equivalents  
 - Automated evaluation, visualization, and reporting  
 - A structured ML manual documenting pipeline architecture and modeling methodology  
