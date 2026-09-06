@@ -36,12 +36,6 @@ The project now includes full support for **price‑tier classification**, enabl
 ### **Binary Classification**
 - Expensive vs Non‑Expensive (mean/median split)
 
-### **3‑Class Classification**
-- Low / Medium / High price tiers
-
-### **4‑Class Classification**
-- Quartiles of the price distribution
-
 ### **Implemented Algorithms**
 - **KNN**
 - **LDA**
